@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Worker extends Employee {
-    static ArrayList<Worker> arrayList;
+    static  ArrayList<Worker> listOfWorkers = new ArrayList<>();
 
     public Worker(String name, int workingHours) {
         super(name, workingHours);
@@ -15,9 +15,7 @@ public class Worker extends Employee {
 
     }
 
-
      static boolean addWorker() {
-
 
         while (true) {
             Scanner scan = new Scanner(System.in);
@@ -35,7 +33,6 @@ public class Worker extends Employee {
                 return true;
             }
 
-
             System.out.print("Please enter employee working hours:");
             int whScan = scan.nextInt();
 
@@ -44,19 +41,15 @@ public class Worker extends Employee {
                whScan = scan.nextInt();
             }
 
-
-            ArrayList<Worker> listOfWorkers = new ArrayList<>();
-                Worker newWorker = new Worker(nameScan, whScan);
+              Worker newWorker = new Worker(nameScan, whScan);
                 listOfWorkers.add(newWorker);
             }
         }
 
+        
+    static void show() {
 
-
-    @Override
-    void show() {
-
-        System.out.print(arrayList);
+        System.out.print(listOfWorkers);
 
     }
 

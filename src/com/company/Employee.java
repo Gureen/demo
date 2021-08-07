@@ -45,7 +45,7 @@ abstract class Employee {
     }
 
 
-    abstract void show();
+
 
     abstract void remove();
 

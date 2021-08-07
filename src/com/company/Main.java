@@ -29,10 +29,7 @@ public class Main {
                    }
 
                 case "show":
-                    Worker showEmployee = new Worker();
-                    showEmployee.show();
-                    break loop;
-
+                   Worker.show();
                 case "remove":
                     System.out.print("test 3");
                     break loop;
