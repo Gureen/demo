@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Worker extends Employee {
-    static ArrayList<Worker> listOfWorkers = new ArrayList<>();
+    static ArrayList<Employee> listOfEmployees = new ArrayList<>();
 
     public Worker(String name, int workingHours) {
         super(name, workingHours);
@@ -46,15 +46,15 @@ public class Worker extends Employee {
 
 
 
-            Worker newWorker = new Worker(nameScan, whScan);
-            listOfWorkers.add(newWorker);
+            Employee newEmployee = new Worker(nameScan, whScan);
+            listOfEmployees.add(newEmployee);
         }
     }
 
 
     static void show() {
 
-        System.out.print(listOfWorkers );
+        System.out.print(listOfEmployees );
 
 
     }
@@ -67,9 +67,9 @@ public class Worker extends Employee {
         String userInput = removeByName.nextLine();
 
 
-        for (int i = 0; i < listOfWorkers.size(); i++) {
-            if (listOfWorkers.get(i).getName().equals(userInput)) {
-                listOfWorkers.remove(i);
+        for (int i = 0; i < listOfEmployees.size(); i++) {
+            if (listOfEmployees.get(i).getName().equals(userInput)) {
+                listOfEmployees.remove(i);
                 System.out.print("Employee was removed!: \n");
                 continue;
 
@@ -83,9 +83,9 @@ public class Worker extends Employee {
         System.out.println("Enter employee name");
         String search = searchBar.nextLine();
 
-        for (Worker worker : listOfWorkers) {
-            if (worker.getName().equals(search)) {
-                System.out.println( worker.getName() + " worked " + worker.getWorkingHours() + " hours this week.");
+        for (Employee employee : listOfEmployees) {
+            if (employee.getName().equals(search)) {
+                System.out.println( employee.getName() + " worked " + employee.getWorkingHours() + " hours this week.");
             } else {
                 System.out.println(search + " doesn't exist, please add employee first.");
             }
@@ -95,7 +95,7 @@ public class Worker extends Employee {
 
 
 
-    @Override
+
     void exit() {
       System.exit(0);
     }

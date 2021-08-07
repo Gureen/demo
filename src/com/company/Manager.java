@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 
     public class Manager extends Employee {
-        static ArrayList<Manager> listOfManagers = new ArrayList<>();
+        static ArrayList<Employee> listOfEmployees = new ArrayList<>();
 
         public Manager(String name, int workingHours) {
             super(name, workingHours);
@@ -46,59 +46,11 @@ import java.util.Scanner;
 
 
 
-                Manager newManger = new Manager(nameScan, whScan);
-                listOfManagers.add(newManger);
+                Employee newEmployee = new Manager(nameScan, whScan);
+                listOfEmployees.add(newEmployee);
             }
         }
 
-
-        static void show() {
-
-            System.out.print(listOfManagers);
-
-
-        }
-
-
-        static void remove() {
-
-            System.out.print(" Please enter the name of user you want to delete:\n");
-            Scanner removeByName = new Scanner(System.in);
-            String userInput = removeByName.nextLine();
-
-
-            for (int i = 0; i < listOfManagers.size(); i++) {
-                if (listOfManagers.get(i).getName().equals(userInput)) {
-                    listOfManagers.remove(i);
-                    System.out.print("Employee was removed!: \n");
-                    continue;
-
-                }
-            }
-        }
-
-
-        static void searchEmployee() {
-            Scanner searchBar = new Scanner(System.in);
-            System.out.println("Enter employee name");
-            String search = searchBar.nextLine();
-
-            for (Manager manager : listOfManagers) {
-                if (manager.getName().equals(search)) {
-                    System.out.println( manager.getName() + " worked " + manager.getWorkingHours() + " hours this week.");
-                } else {
-                    System.out.println(search + " doesn't exist, please add employee first.");
-                }
-
-            }
-        }
-
-
-
-        @Override
-        void exit() {
-            System.exit(0);
-        }
 
         @Override
         public String toString() {
