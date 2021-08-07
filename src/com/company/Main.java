@@ -28,6 +28,17 @@ public class Main {
 
                    }
 
+                case "add m":
+                    Manager.addManager();
+
+                    if(true){
+
+                        System.out.print("Hello, user!\n" +
+                                "Please enter command:");
+                        continue;
+
+                    }
+
                 case "show":
                    Worker.show();
 
