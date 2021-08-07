@@ -1,11 +1,9 @@
 package com.company;
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
 
     public class Manager extends Employee {
-        static ArrayList<Employee> listOfEmployees = new ArrayList<>();
+
 
         public Manager(String name, int workingHours) {
             super(name, workingHours);
@@ -59,7 +57,7 @@ import java.util.Scanner;
 
         @Override
         int calculateSalary() {
-            return getWorkingHours() * 10;
+            return getWorkingHours() * 20;
         }
     }
 

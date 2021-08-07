@@ -1,11 +1,9 @@
 package com.company;
 
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Worker extends Employee {
-    static ArrayList<Employee> listOfEmployees = new ArrayList<>();
+
 
     public Worker(String name, int workingHours) {
         super(name, workingHours);

@@ -1,8 +1,13 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 abstract class Employee {
+
+    static ArrayList<Employee> listOfEmployees = new ArrayList<>();
+
+
     private String id;
     private String name;
     private int workingHours;
@@ -14,6 +19,15 @@ abstract class Employee {
     }
 
     public Employee() {
+    }
+
+
+    public static ArrayList<Employee> getListOfEmployees() {
+        return listOfEmployees;
+    }
+
+    public static void setListOfEmployees(ArrayList<Employee> listOfEmployees) {
+        Employee.listOfEmployees = listOfEmployees;
     }
 
     public String getId() {
