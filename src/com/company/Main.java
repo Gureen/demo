@@ -10,7 +10,7 @@ public class Main {
                 "Please enter command:");
 
         Scanner newScan = new Scanner(System.in);
-        loop:
+
         while (true) {
 
             String input = newScan.nextLine();
@@ -41,6 +41,12 @@ public class Main {
                     System.out.print("\nPlease input next command:\n");
 
                     continue;
+                case "search":
+
+                    Worker.searchEmployee();
+
+                    System.out.print("\nPlease input next command:\n");
+                    continue;
 
                 case "exit":
                           Worker exitCase = new Worker();
@@ -48,7 +54,7 @@ public class Main {
 
                 default:
                     System.out.print("Wrong input! Please use one of the following commands!\n"
-                            + "add w\n" + "add m\n" + "show\n" + "remove\n" + "exit\n"
+                            + "add w\n" + "add m\n" + "show\n" + "remove\n" + "search\n" + "exit\n"
                             + "New input command:");
 
             }

@@ -2,11 +2,10 @@ package com.company;
 
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class Worker extends Employee {
-    static  ArrayList<Worker> listOfWorkers = new ArrayList<>();
+    static ArrayList<Worker> listOfWorkers = new ArrayList<>();
 
     public Worker(String name, int workingHours) {
         super(name, workingHours);
@@ -16,7 +15,7 @@ public class Worker extends Employee {
 
     }
 
-     static boolean addWorker() {
+    static void addWorker() {
 
         while (true) {
             Scanner scan = new Scanner(System.in);
@@ -31,21 +30,21 @@ public class Worker extends Employee {
             String nameScan = scan.nextLine();
 
             if (nameScan.equals("end")) {
-                return true;
+                return;
             }
 
             System.out.print("Please enter employee working hours:");
             int whScan = scan.nextInt();
 
-            while(whScan < 0 || whScan > 40){
-              System.out.print("Please input working hours between 0 - 40: \n");
-               whScan = scan.nextInt();
+            while (whScan < 0 || whScan > 40) {
+                System.out.print("Please input working hours between 0 - 40: \n");
+                whScan = scan.nextInt();
             }
 
-              Worker newWorker = new Worker(nameScan, whScan);
-                listOfWorkers.add(newWorker);
-            }
+            Worker newWorker = new Worker(nameScan, whScan);
+            listOfWorkers.add(newWorker);
         }
+    }
 
 
     static void show() {
@@ -58,18 +57,34 @@ public class Worker extends Employee {
 
     static void remove() {
 
-       System.out.print(" Please enter the name of user you want to delete:\n");
+        System.out.print(" Please enter the name of user you want to delete:\n");
         Scanner removeByName = new Scanner(System.in);
         String userInput = removeByName.nextLine();
 
 
-        for (int i=0; i<listOfWorkers.size(); i++) {
+        for (int i = 0; i < listOfWorkers.size(); i++) {
             if (listOfWorkers.get(i).getName().equals(userInput)) {
                 listOfWorkers.remove(i);
-                System.out.print("Employee was removed! \n:");
+                System.out.print("Employee was removed!: \n");
                 continue;
 
             }
+        }
+    }
+
+
+    static void searchEmployee() {
+        Scanner searchBar = new Scanner(System.in);
+        System.out.println("Enter employee name");
+        String search = searchBar.nextLine();
+
+        for (Worker worker : listOfWorkers) {
+            if (worker.getName().equals(search)) {
+                System.out.println( worker.getName() + " worked " + worker.getWorkingHours() + " hours this week.");
+            } else {
+                System.out.println(search + " doesn't exist, please add employee first.");
+            }
+
         }
     }
 
