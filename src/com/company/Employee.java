@@ -58,4 +58,6 @@ abstract class Employee {
 
     abstract void exit();
 
+    abstract int calculateSalary();
+
 }

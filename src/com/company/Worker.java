@@ -39,7 +39,12 @@ public class Worker extends Employee {
             while (whScan < 0 || whScan > 40) {
                 System.out.print("Please input working hours between 0 - 40: \n");
                 whScan = scan.nextInt();
+
+
             }
+
+
+
 
             Worker newWorker = new Worker(nameScan, whScan);
             listOfWorkers.add(newWorker);
@@ -98,5 +103,10 @@ public class Worker extends Employee {
     @Override
     public String toString() {
         return super.toString();
+    }
+
+    @Override
+    int calculateSalary() {
+        return getWorkingHours() * 10;
     }
 }
