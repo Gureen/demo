@@ -2,6 +2,7 @@ package com.company;
 
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Worker extends Employee {
@@ -46,20 +47,41 @@ public class Worker extends Employee {
             }
         }
 
-        
+
     static void show() {
 
         System.out.print(listOfWorkers);
 
-    }
-
-    @Override
-    void remove() {
 
     }
+
+
+    static void remove() {
+
+       System.out.print(" Please enter the name of user you want to delete:\n");
+        Scanner removeByName = new Scanner(System.in);
+        String userInput = removeByName.nextLine();
+
+
+        for (int i=0; i<listOfWorkers.size(); i++) {
+            if (listOfWorkers.get(i).getName().equals(userInput)) {
+                listOfWorkers.remove(i);
+                System.out.print("Employee was removed! \n:");
+                continue;
+
+            }
+        }
+    }
+
+
 
     @Override
     void exit() {
       System.exit(0);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }

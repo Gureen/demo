@@ -30,9 +30,17 @@ public class Main {
 
                 case "show":
                    Worker.show();
+
+                   System.out.print("\nPlease input next command:\n");
+
+                    continue;
+
                 case "remove":
-                    System.out.print("test 3");
-                    break loop;
+                  Worker.remove();
+
+                    System.out.print("\nPlease input next command:\n");
+
+                    continue;
 
                 case "exit":
                           Worker exitCase = new Worker();

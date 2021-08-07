@@ -45,9 +45,16 @@ abstract class Employee {
     }
 
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", workingHours=" + workingHours +
+                '}';
+    }
 
 
-    abstract void remove();
 
     abstract void exit();
 
