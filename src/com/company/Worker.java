@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Worker extends Employee {
-    ArrayList<Worker> arrayList;
+    static ArrayList<Worker> arrayList;
 
     public Worker(String name, int workingHours) {
         super(name, workingHours);
@@ -15,8 +15,8 @@ public class Worker extends Employee {
 
     }
 
-    @Override
-    boolean addWorker() {
+
+     static boolean addWorker() {
 
 
         while (true) {

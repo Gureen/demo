@@ -1,13 +1,14 @@
 package com.company;
+
+import java.util.UUID;
+
 abstract class Employee {
-    private long id;
+    private String id;
     private String name;
     private int workingHours;
 
-
     public Employee(String name, int workingHours) {
-        long count = 1;
-        this.id = count++;
+        this.id = UUID.randomUUID().toString();
         this.name = name;
         this.workingHours = workingHours;
     }
@@ -15,12 +16,16 @@ abstract class Employee {
     public Employee() {
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
+    }
+
+    public void setWorkingHours(int workingHours) {
+        this.workingHours = workingHours;
     }
 
     public String getName() {
@@ -39,7 +44,6 @@ abstract class Employee {
         this.workingHours = workingHours;
     }
 
-    abstract boolean addWorker();
 
     abstract void show();
 

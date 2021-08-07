@@ -1,6 +1,7 @@
 package com.company;
 import java.util.Scanner;
 
+
 public class Main {
 
     public static void main(String[] args) {
@@ -16,8 +17,9 @@ public class Main {
 
             switch (input) {
                 case "add w":
-                   Worker addNewWorker = new Worker();
-                   addNewWorker.addWorker();
+
+                    Worker.addWorker();
+
                    if(true){
 
                        System.out.print("Hello, user!\n" +
