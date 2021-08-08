@@ -1,5 +1,6 @@
 package com.company;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -24,13 +25,18 @@ abstract class Employee {
     }
 
 
+
+
+
     public static ArrayList<Employee> getListOfEmployees() {
+
         return listOfEmployees;
     }
 
     public static void setListOfEmployees(ArrayList<Employee> listOfEmployees) {
         Employee.listOfEmployees = listOfEmployees;
     }
+
 
     public int getSalary() {
         return salary;
@@ -79,6 +85,11 @@ abstract class Employee {
                 ", salary=" + salary +
                 '}';
     }
+
+
+
+
+
 
     abstract int calculateSalary();
 

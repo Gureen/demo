@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class Worker extends Employee {
@@ -55,11 +57,16 @@ public class Worker extends Employee {
     static void show() {
 
 
-        System.out.print(listOfEmployees);
+        System.out.print(getSortedByName());
 
 
     }
 
+
+   static ArrayList<Employee> getSortedByName() {
+      listOfEmployees.sort(Comparator.comparing(Employee::getName));
+       return listOfEmployees;
+    }
 
     static void remove() {
 
@@ -111,7 +118,6 @@ public class Worker extends Employee {
 
         return setSalary(salary);
     }
-
 
 
 }
