@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Worker extends Employee {
 
 
+
     public Worker(String name, int workingHours) {
         super(name, workingHours);
     }
@@ -34,6 +35,8 @@ public class Worker extends Employee {
             System.out.print("Please enter employee working hours:");
             int whScan = scan.nextInt();
 
+
+
             while (whScan < 0 || whScan > 40) {
                 System.out.print("Please input working hours between 0 - 40: \n");
                 whScan = scan.nextInt();
@@ -42,9 +45,8 @@ public class Worker extends Employee {
             }
 
 
-
-
             Employee newEmployee = new Worker(nameScan, whScan);
+            newEmployee.calculateSalary();
             listOfEmployees.add(newEmployee);
         }
     }
@@ -52,7 +54,8 @@ public class Worker extends Employee {
 
     static void show() {
 
-        System.out.print(listOfEmployees );
+
+        System.out.print(listOfEmployees);
 
 
     }
@@ -98,13 +101,17 @@ public class Worker extends Employee {
       System.exit(0);
     }
 
-    @Override
-    public String toString() {
-        return super.toString();
-    }
+
 
     @Override
-    int calculateSalary() {
-        return getWorkingHours() * 10;
+    public int calculateSalary() {
+
+      int salary =  getWorkingHours() * 10;
+
+
+        return setSalary(salary);
     }
+
+
+
 }

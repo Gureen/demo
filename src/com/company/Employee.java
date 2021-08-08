@@ -11,8 +11,10 @@ abstract class Employee {
     private String id;
     private String name;
     private int workingHours;
+    private int salary;
 
     public Employee(String name, int workingHours) {
+        this.salary = salary;
         this.id = UUID.randomUUID().toString();
         this.name = name;
         this.workingHours = workingHours;
@@ -28,6 +30,15 @@ abstract class Employee {
 
     public static void setListOfEmployees(ArrayList<Employee> listOfEmployees) {
         Employee.listOfEmployees = listOfEmployees;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public int setSalary(int salary) {
+        this.salary = salary;
+        return salary;
     }
 
     public String getId() {
@@ -65,12 +76,9 @@ abstract class Employee {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", workingHours=" + workingHours +
+                ", salary=" + salary +
                 '}';
     }
-
-
-
-
 
     abstract int calculateSalary();
 

@@ -9,9 +9,6 @@ import java.util.Scanner;
             super(name, workingHours);
         }
 
-        public Manager() {
-
-        }
 
         static void addManager() {
 
@@ -42,9 +39,8 @@ import java.util.Scanner;
                 }
 
 
-
-
                 Employee newEmployee = new Manager(nameScan, whScan);
+                newEmployee.calculateSalary();
                 listOfEmployees.add(newEmployee);
             }
         }
@@ -57,8 +53,11 @@ import java.util.Scanner;
 
         @Override
         int calculateSalary() {
-            return getWorkingHours() * 20;
+
+            int salary = getWorkingHours() * 20;
+
+
+            return setSalary(salary);
         }
     }
-
 
